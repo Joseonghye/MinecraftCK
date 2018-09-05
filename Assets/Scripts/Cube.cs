@@ -110,14 +110,7 @@ public class Cube : MonoBehaviour {
            new Vector2(point.x + size.z+size.x,point.y+size.y)
         };
         uvs.AddRange(top);
-        Vector2[] Bottom = new Vector2[]
-   {
-           new Vector2(point.x + size.z+size.x,point.y+size.y),
-           new Vector2(point.x + size.z+size.x,point.y+size.y+size.z),
-           new Vector2(point.x + size.x+(2*size.z),point.y+size.y+size.z),
-           new Vector2(point.x + size.x+(2*size.z),point.y+size.y)
-   };
-        uvs.AddRange(Bottom);
+
         Vector2[] Left = new Vector2[]
        {
            new Vector2(point.x,point.y),
@@ -143,7 +136,14 @@ public class Cube : MonoBehaviour {
            new Vector2(point.x + (2*size.x)+(2*size.z),point.y)
         };
         uvs.AddRange(Back);
-   
+        Vector2[] Bottom = new Vector2[]
+{
+           new Vector2(point.x + size.z+size.x,point.y+size.y),
+           new Vector2(point.x + size.z+size.x,point.y+size.y+size.z),
+           new Vector2(point.x + size.x+(2*size.z),point.y+size.y+size.z),
+           new Vector2(point.x + size.x+(2*size.z),point.y+size.y)
+};
+        uvs.AddRange(Bottom);
 
         return uvs.ToArray();
     }
